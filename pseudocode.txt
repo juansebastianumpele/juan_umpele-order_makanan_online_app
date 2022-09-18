@@ -13,3 +13,15 @@ IF "totalHargaAwal" MORE THAN OR EQUAL "50000"
 		 STORE "cetak struk" amount "transaksi"
 		 PRINT "cetak struk"
 		ENDIF
+ElSE
+ STORE "totalPembayaran" with CALCULATE "totalHargaAwal" multiple by "diskon"
+	STORE "metode pembayaran"
+		IF "metode pembayaran == gopay" 
+		 STORE "cetak struk" amount "transaksi"
+		 PRINT "cetak struk" 
+		ELSE
+		 STORE "cetak struk" amount "transaksi"
+		 PRINT "cetak struk"
+		ENDIF
+ENDIF
+       
